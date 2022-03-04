@@ -1,2 +1,2 @@
-# fmi-avidb-schema
-FMI aviation message database schema
+# avidb-schema
+Aviation message database schema
