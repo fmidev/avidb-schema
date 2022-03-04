@@ -27,19 +27,18 @@
     </scm>
 
     <properties>
-        <postgresql-schema-dir>fi/fmi/avi/avidb/schema/postgresql</postgresql-schema-dir>
-        <h2-schema-dir>fi/fmi/avi/avidb/schema/h2</h2-schema-dir>
+        <schema-dir>fi/fmi/avi/avidb/schema/</schema-dir>
     </properties>
 
     <build>
         <resources>
             <resource>
                 <directory>postgresql</directory>
-                <targetPath>${postgresql-schema-dir}</targetPath>
+                <targetPath>${schema-dir}/postgresql</targetPath>
             </resource>
             <resource>
                 <directory>h2</directory>
-                <targetPath>${h2-schema-dir}</targetPath>
+                <targetPath>${schema-dir}/h2</targetPath>
             </resource>
         </resources>
     </build>
