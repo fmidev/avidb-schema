@@ -27,7 +27,7 @@
     </scm>
 
     <properties>
-        <schema-dir>fi/fmi/avi/avidb/schema/</schema-dir>
+        <schema-dir>fi/fmi/avi/avidb/schema</schema-dir>
     </properties>
 
     <build>
