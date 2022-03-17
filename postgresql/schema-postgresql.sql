@@ -521,29 +521,11 @@ CREATE INDEX avidb_iwxxm_st_idx ON public.avidb_iwxxm USING btree (station_id);
 
 CREATE INDEX avidb_iwxxm_status ON public.avidb_iwxxm USING btree (iwxxm_status);
 
-CREATE INDEX avidb_messages_created_idx ON ONLY public.avidb_messages USING btree (created);
+CREATE INDEX avidb_messages_created_idx ON public.avidb_messages USING btree (created);
 
-CREATE INDEX avidb_messages_station_id_idx ON ONLY public.avidb_messages USING btree (station_id);
+CREATE INDEX avidb_messages_station_id_idx ON public.avidb_messages USING btree (station_id);
 
-CREATE INDEX avidb_messages_idx ON ONLY public.avidb_messages USING btree (message_time, type_id, station_id, format_id);
-
-CREATE INDEX avidb_messages_p2010_created_idx ON public.avidb_messages_p2010 USING btree (created);
-
-CREATE INDEX avidb_messages_p2010_message_time_type_id_station_id_for_idx ON public.avidb_messages_p2010 USING btree (message_time, type_id, station_id, format_id);
-
-CREATE INDEX avidb_messages_p2010_station_id_idx ON public.avidb_messages_p2010 USING btree (station_id);
-
-CREATE INDEX avidb_messages_p2020_created_idx ON public.avidb_messages_p2020 USING btree (created);
-
-CREATE INDEX avidb_messages_p2020_message_time_type_id_station_id_for_idx ON public.avidb_messages_p2020 USING btree (message_time, type_id, station_id, format_id);
-
-CREATE INDEX avidb_messages_p2020_station_id_idx ON public.avidb_messages_p2020 USING btree (station_id);
-
-CREATE INDEX avidb_messages_pdefault_created_idx ON public.avidb_messages_pdefault USING btree (created);
-
-CREATE INDEX avidb_messages_pdefault_message_time_type_id_station_id_for_idx ON public.avidb_messages_pdefault USING btree (message_time, type_id, station_id, format_id);
-
-CREATE INDEX avidb_messages_pdefault_station_id_idx ON public.avidb_messages_pdefault USING btree (station_id);
+CREATE INDEX avidb_messages_idx ON public.avidb_messages USING btree (message_time, type_id, station_id, format_id);
 
 CREATE INDEX avidb_rejected_messages_idx1 ON public.avidb_rejected_messages USING btree (created);
 
@@ -552,24 +534,6 @@ CREATE INDEX avidb_stations_geom_idx ON public.avidb_stations USING gist (geom);
 ALTER INDEX public.avidb_message_iwxxm_details_pkey ATTACH PARTITION public.avidb_message_iwxxm_details_p0_pkey;
 
 ALTER INDEX public.avidb_message_iwxxm_details_pkey ATTACH PARTITION public.avidb_message_iwxxm_details_pdefault_pkey;
-
-ALTER INDEX public.avidb_messages_created_idx ATTACH PARTITION public.avidb_messages_p2010_created_idx;
-
-ALTER INDEX public.avidb_messages_idx ATTACH PARTITION public.avidb_messages_p2010_message_time_type_id_station_id_for_idx;
-
-ALTER INDEX public.avidb_messages_station_id_idx ATTACH PARTITION public.avidb_messages_p2010_station_id_idx;
-
-ALTER INDEX public.avidb_messages_created_idx ATTACH PARTITION public.avidb_messages_p2020_created_idx;
-
-ALTER INDEX public.avidb_messages_idx ATTACH PARTITION public.avidb_messages_p2020_message_time_type_id_station_id_for_idx;
-
-ALTER INDEX public.avidb_messages_station_id_idx ATTACH PARTITION public.avidb_messages_p2020_station_id_idx;
-
-ALTER INDEX public.avidb_messages_created_idx ATTACH PARTITION public.avidb_messages_pdefault_created_idx;
-
-ALTER INDEX public.avidb_messages_idx ATTACH PARTITION public.avidb_messages_pdefault_message_time_type_id_station_id_for_idx;
-
-ALTER INDEX public.avidb_messages_station_id_idx ATTACH PARTITION public.avidb_messages_pdefault_station_id_idx;
 
 CREATE TRIGGER avidb_message_routes_trg
     BEFORE INSERT OR UPDATE
