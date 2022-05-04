@@ -11,7 +11,7 @@
 
   <groupId>fi.fmi.avi.avidb</groupId>
   <artifactId>avidb-schema</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>AVIDB schema</name>
@@ -23,7 +23,7 @@
     <connection>${scm-url}</connection>
     <developerConnection>${scm-url}</developerConnection>
     <url>${scm-web-url}</url>
-    <tag>avidb-schema-1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
